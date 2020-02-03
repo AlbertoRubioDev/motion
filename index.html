@@ -1,0 +1,22 @@
+<html>
+    <h1 id="acceleration"></h1>
+    <h1 id="absolute"></h1>
+    <h1 id="e"></h1>
+    <h1 id="demo"></h1>
+</html>
+
+<script>
+document.addEventListener('DOMContentLoaded', init, false);
+function init() {
+	console.log('Engage');
+	window.addEventListener('deviceorientation', motion, false);
+}
+
+function motion(e) {
+    console.log(e);
+    document.getElementById("acceleration").innerHTML =JSON.stringify(e.alpha);
+    document.getElementById("absolute").innerHTML =JSON.stringify(e.absolute);
+    document.getElementById("e").innerHTML =JSON.stringify(e);
+    }
+
+</script>
